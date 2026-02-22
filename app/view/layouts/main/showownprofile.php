@@ -2,7 +2,7 @@
 $msg = $msg ?? "";
 
 $defaultAvatar = BASE_PATH . "/images/default_avatar.png";
-$avatar = $profile->getAvatarUrl() ?: $defaultAvatar;
+$avatar = public_url($profile->getAvatarUrl() ?: $defaultAvatar);
 $username = $profile->getUsername();
 ?>
 
@@ -29,7 +29,7 @@ $username = $profile->getUsername();
 
                             <a href="<?= url('/profile/' . (int)$friend->getId()) ?>" class="friend-link">
                                 <div class="friend-item">
-                                    <?php $fAvatar = $friend->getAvatarUrl() ?: $defaultAvatar; ?>
+                                    <?php $fAvatar = public_url($friend->getAvatarUrl() ?: $defaultAvatar); ?>
                                     <img src="<?= htmlspecialchars($fAvatar) ?>" alt="" class="friend-avatar"><?= htmlspecialchars($friend->getUsername()) ?>
                                 </div>
                             </a>
@@ -67,7 +67,7 @@ $username = $profile->getUsername();
                                 <div class="content">
                                     <p><?= nl2br(htmlspecialchars($post["content"])) ?></p>
                                     <?php if (!empty($post["img_url"])): ?>
-                                        <img class="post-img" src="<?= htmlspecialchars($post["img_url"]) ?>" alt="post image">
+                                        <img class="post-img" src="<?= htmlspecialchars(public_url($post["img_url"])) ?>" alt="post image">
                                     <?php endif; ?>
                                 </div>
                             </div>

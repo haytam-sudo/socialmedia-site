@@ -26,7 +26,7 @@
                             <a href="<?php echo url('/profile/' . (int)$profile['id']); ?>" class="profile-link">
                                 <div class="profile-header">
                                     <?php if (!empty($profile['avatar_url'])): ?>
-                                        <img src="<?php echo htmlspecialchars($profile['avatar_url']); ?>" alt="<?php echo htmlspecialchars($profile['username']); ?>" class="profile-pic">
+                                        <img src="<?php echo htmlspecialchars(public_url($profile['avatar_url'])); ?>" alt="<?php echo htmlspecialchars($profile['username']); ?>" class="profile-pic">
                                     <?php else: ?>
                                         <div class="profile-pic-placeholder">No Image</div>
                                     <?php endif; ?>

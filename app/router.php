@@ -19,6 +19,34 @@ function url(string $path): string
 }
 
 /**
+ * Normalize a public asset path (uploads/images/css/js) to an absolute URL.
+ * Handles values stored as:
+ * - '/uploads/x.png'
+ * - 'uploads/x.png'
+ * - '/website/public/uploads/x.png' (legacy)
+ */
+function public_url(string $path): string
+{
+    $path = trim($path);
+    if ($path === '') {
+        return '';
+    }
+
+    // Absolute URLs are left untouched
+    if (preg_match('#^(https?:)?//#i', $path)) {
+        return $path;
+    }
+
+    // Remove legacy '/website/public' prefix if present
+    $path = preg_replace('#^/website/public#', '', $path);
+
+    // Ensure leading slash
+    $path = '/' . ltrim($path, '/');
+
+    return BASE_PATH . $path;
+}
+
+/**
  * Get the current request path (e.g. '/login', '/profile/1').
  */
 function request_path(): string
