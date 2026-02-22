@@ -1,0 +1,197 @@
+/* ===================================
+   COMMON FORM STYLES
+   =================================== */
+
+/* Form Container */
+.form-container,
+#editprofil {
+    max-width: 500px;
+    margin: 50px auto;
+    background: linear-gradient(135deg, #2a2a2a 0%, #2d2d2d 100%);
+    border: none;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+#loginPage,
+#signupPage {
+    max-width: 400px;
+    margin: 50px auto;
+    background: linear-gradient(135deg, #2a2a2a 0%, #2d2d2d 100%);
+    border: none;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.form-container h2,
+#loginPage h2,
+#signupPage h2,
+#editprofil h2 {
+    text-align: center;
+    color: #66ccff;
+    font-size: 24px;
+    margin: 0 0 25px 0;
+    border-bottom: 2px solid rgba(0, 102, 204, 0.3);
+    padding-bottom: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.form-container form,
+#loginPage form,
+#signupPage form,
+#editprofil form {
+    background: rgba(51, 51, 51, 0.5);
+    padding: 25px;
+    border: 2px solid rgba(68, 68, 68, 0.3);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.form-container label,
+#loginPage label,
+#signupPage label,
+#editprofil label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e0e0e0;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container input[type="date"],
+.form-container input[type="file"],
+.form-container textarea,
+#loginPage input[type="text"],
+#loginPage input[type="email"],
+#loginPage input[type="password"],
+#loginPage input[type="date"],
+#loginPage input[type="file"],
+#loginPage textarea,
+#signupPage input[type="text"],
+#signupPage input[type="email"],
+#signupPage input[type="password"],
+#signupPage input[type="date"],
+#signupPage input[type="file"],
+#signupPage textarea,
+#editprofil input[type="text"],
+#editprofil input[type="email"],
+#editprofil input[type="password"],
+#editprofil input[type="date"],
+#editprofil input[type="file"],
+#editprofil textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid rgba(68, 68, 68, 0.5);
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 18px;
+    font-family: inherit;
+    box-sizing: border-box;
+    background: rgba(42, 42, 42, 0.8);
+    color: #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.form-container input[type="text"]::placeholder,
+.form-container input[type="email"]::placeholder,
+.form-container input[type="password"]::placeholder,
+#loginPage input::placeholder,
+#signupPage input::placeholder,
+#editprofil input::placeholder {
+    color: rgba(176, 176, 176, 0.6);
+}
+
+.form-container textarea,
+#loginPage textarea,
+#signupPage textarea,
+#editprofil textarea {
+    resize: vertical;
+}
+
+.form-container input:focus,
+.form-container textarea:focus,
+#loginPage input:focus,
+#loginPage textarea:focus,
+#signupPage input:focus,
+#signupPage textarea:focus,
+#editprofil input:focus,
+#editprofil textarea:focus {
+    outline: none;
+    border-color: rgba(0, 102, 204, 0.6);
+    background: rgba(50, 50, 50, 0.9);
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.2);
+    transform: translateY(-1px);
+}
+
+.form-container button,
+#loginPage button,
+#signupPage button,
+#editprofil button {
+    width: 100%;
+    background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+    color: #ffffff;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+    letter-spacing: 0.5px;
+}
+
+.form-container button:hover,
+#loginPage button:hover,
+#signupPage button:hover,
+#editprofil button:hover {
+    background: linear-gradient(135deg, #0052a3 0%, #004080 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 102, 204, 0.4);
+}
+
+.form-container button:active,
+#loginPage button:active,
+#signupPage button:active,
+#editprofil button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.3);
+}
+
+/* Form Footer */
+.form-footer {
+    margin-top: 0;
+    text-align: center;
+    background: rgba(42, 42, 42, 0.5);
+    padding: 15px;
+    border: 1px solid rgba(68, 68, 68, 0.3);
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.form-footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #b0b0b0;
+    line-height: 1.6;
+}
+
+.form-footer a {
+    color: #66ccff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.form-footer a:hover {
+    color: #99ddff;
+    text-shadow: 0 0 8px rgba(102, 204, 255, 0.5);
+}

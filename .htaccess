@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /website/
+
+# Don't rewrite if the request is for an actual file or directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite all requests to public/index.php with the path preserved
+RewriteRule ^(.*)$ public/index.php?url=/$1 [QSA,L]

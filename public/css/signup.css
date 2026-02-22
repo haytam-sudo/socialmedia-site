@@ -1,0 +1,29 @@
+/* ===================================
+   SIGNUP PAGE SPECIFIC STYLES
+   =================================== */
+/* All common styles are in forms.css */
+
+#signupPage>p {
+    margin-top: 20px;
+    text-align: center;
+    background: rgba(42, 42, 42, 0.5);
+    padding: 15px;
+    border: 1px solid rgba(68, 68, 68, 0.3);
+    border-radius: 8px;
+    font-size: 14px;
+    color: #b0b0b0;
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+#signupPage>p a {
+    color: #66ccff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+#signupPage>p a:hover {
+    color: #99ddff;
+    text-shadow: 0 0 8px rgba(102, 204, 255, 0.5);
+}
