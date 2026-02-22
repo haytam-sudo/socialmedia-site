@@ -1,0 +1,24 @@
+# Environment
+.env
+
+# Composer
+/vendor/
+
+# Node
+/node_modules/
+
+# Logs + Cache
+/storage/logs/
+/storage/cache/
+
+# User uploads (important for social media apps)
+public/uploads/*
+!public/uploads/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
