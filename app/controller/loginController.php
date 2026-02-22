@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && !empty($_SESSION["user_id"])) {
     exit;
 }
 
-require_once "/opt/lampp/htdocs/website/config/config.php";
+require_once APP_ROOT . "/config/config.php";
 
 $msg = "";
 
@@ -52,3 +52,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $msg = "Please fill in all fields.";
     }
 }
+
+require_once APP_ROOT . "/app/view/loginView.php";

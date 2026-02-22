@@ -7,8 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && !empty($_SESSION["user_id"])) {
     header('Location: ' . url('/profile/' . (int)$_SESSION["user_id"]));
     exit;
 }
-require_once "/opt/lampp/htdocs/website/config/config.php";
-require_once "/opt/lampp/htdocs/website/app/model/profile.php";
+require_once APP_ROOT . "/config/config.php";
+require_once APP_ROOT . "/app/model/profile.php";
 
 $msg = "";
 
@@ -96,3 +96,5 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         return;
     }
 }
+
+require_once APP_ROOT . "/app/view/signupView.php";

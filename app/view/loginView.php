@@ -5,14 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/website/public/css/main.css">
-    <link rel="stylesheet" href="/website/public/css/forms.css">
-    <link rel="stylesheet" href="/website/public/css/login.css">
+    <link rel="stylesheet" href="<?= htmlspecialchars(BASE_PATH) ?>/css/main.css">
+    <link rel="stylesheet" href="<?= htmlspecialchars(BASE_PATH) ?>/css/forms.css">
+    <link rel="stylesheet" href="<?= htmlspecialchars(BASE_PATH) ?>/css/login.css">
 </head>
 
 <body>
-    <?php require_once "/opt/lampp/htdocs/website/app/controller/loginController.php"; ?>
-
     <div id="loginPage">
         <h2>Welcome Back</h2>
 

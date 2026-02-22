@@ -1,5 +1,5 @@
 <?php
-require_once "/opt/lampp/htdocs/website/config/config.php";
+require_once APP_ROOT . "/config/config.php";
 class Search
 {
     private $search;

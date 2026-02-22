@@ -1,19 +1,9 @@
 <?php
-require_once "/opt/lampp/htdocs/website/app/controller/getPostsbyUser.php";
-require_once "/opt/lampp/htdocs/website/app/controller/PostController.php";
-require_once "/opt/lampp/htdocs/website/app/model/Friends.php";
-
 $msg = $msg ?? "";
 
-// Get profile posts
-$posts = getPostsByUser($profile_id);
-
-$defaultAvatar = "/website/public/images/default_avatar.png";
+$defaultAvatar = BASE_PATH . "/images/default_avatar.png";
 $avatar = $profile->getAvatarUrl() ?: $defaultAvatar;
 $username = $profile->getUsername();
-
-$friendsModel = new Friends((int)$profile_id);
-$friendsList = $friendsModel->getFriends();
 ?>
 
 <?php if ($msg): ?>

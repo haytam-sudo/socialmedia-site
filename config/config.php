@@ -1,4 +1,8 @@
 <?php
+if (!defined('APP_ROOT')) {
+    define('APP_ROOT', dirname(__DIR__));
+}
+
 try {
     $pdo = new PDO(
         "mysql:host=127.0.0.1;dbname=socialmedia;charset=utf8",
@@ -14,8 +18,6 @@ try {
 
 /** Base path for the app (used by router and url helper). */
 if (!defined('BASE_PATH')) {
-    define('BASE_PATH', '/website/public');
+    define('BASE_PATH', '');
 }
 
-/** Load router to make url() function available */
-require_once __DIR__ . '/../app/router.php';

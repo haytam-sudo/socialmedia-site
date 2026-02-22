@@ -6,11 +6,11 @@
  */
 
 if (!defined('BASE_PATH')) {
-    define('BASE_PATH', '/website/public');
+    define('BASE_PATH', '');
 }
 
 /**
- * Generate full URL for a path (e.g. url('/login') => '/website/public/login').
+ * Generate full URL for a path (e.g. url('/login') => '/login').
  */
 function url(string $path): string
 {
@@ -85,19 +85,19 @@ function get_routes(): array
             header('Location: ' . url('/login'));
             exit;
         },
-        'GET /login' => $root . '/app/view/loginView.php',
+        'GET /login' => $root . '/app/controller/loginController.php',
         'POST /login' => $root . '/app/controller/loginController.php',
-        'GET /signup' => $root . '/app/view/signupView.php',
+        'GET /signup' => $root . '/app/controller/signupController.php',
         'POST /signup' => $root . '/app/controller/signupController.php',
         'GET /logout' => $root . '/app/controller/logout.php',
-        'GET /profile/{id}' => $root . '/app/view/profileView.php',
-        'POST /profile/{id}' => $root . '/app/view/profileView.php',
-        'GET /profile/{id}/edit' => $root . '/app/view/editprofilView.php',
-        'POST /profile/{id}/edit' => $root . '/app/view/editprofilView.php',
-        'GET /search' => $root . '/app/view/searchView.php',
-        'POST /search' => $root . '/app/view/searchView.php',
-        'GET /notifications' => $root . '/app/view/notifications.php',
-        'POST /notifications' => $root . '/app/view/notifications.php',
+        'GET /profile/{id}' => $root . '/app/controller/profileController.php',
+        'POST /profile/{id}' => $root . '/app/controller/profileController.php',
+        'GET /profile/{id}/edit' => $root . '/app/controller/editprofileController.php',
+        'POST /profile/{id}/edit' => $root . '/app/controller/editprofileController.php',
+        'GET /search' => $root . '/app/controller/searchController.php',
+        'POST /search' => $root . '/app/controller/searchController.php',
+        'GET /notifications' => $root . '/app/controller/notificationsController.php',
+        'POST /notifications' => $root . '/app/controller/notificationsController.php',
         'GET /explore' => $root . '/public/placeholder.php',
         'GET /messages' => $root . '/public/placeholder.php',
         'GET /settings' => $root . '/public/placeholder.php',

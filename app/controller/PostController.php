@@ -2,9 +2,9 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-require_once "/opt/lampp/htdocs/website/config/config.php";
-require_once "/opt/lampp/htdocs/website/app/model/profile.php";
-require_once "/opt/lampp/htdocs/website/app/model/posts.php";
+require_once APP_ROOT . "/config/config.php";
+require_once APP_ROOT . "/app/model/profile.php";
+require_once APP_ROOT . "/app/model/posts.php";
 
 $msg = "";
 
@@ -55,7 +55,7 @@ function processImageUpload()
         return $result;
     }
 
-    $uploadDirFs = "/opt/lampp/htdocs/website/public/uploads/";
+    $uploadDirFs = APP_ROOT . "/public/uploads/";
     if (!is_dir($uploadDirFs)) {
         mkdir($uploadDirFs, 0775, true);
     }
@@ -68,7 +68,7 @@ function processImageUpload()
         return $result;
     }
 
-    $result['imgUrl'] = "/website/public/uploads/" . $filename;
+    $result['imgUrl'] = BASE_PATH . "/uploads/" . $filename;
     return $result;
 }
 
@@ -189,7 +189,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST["action"] ?? "") === "delet
                     if ($deletePost->deletePost($postId)) {
                         // Delete associated image if it exists
                         if ($post['img_url']) {
-                            $imagePath = "/opt/lampp/htdocs" . $post['img_url'];
+                            $imagePath = APP_ROOT . "/public" . $post['img_url'];
                             if (file_exists($imagePath)) {
                                 unlink($imagePath);
                             }

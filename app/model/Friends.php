@@ -1,6 +1,6 @@
 <?php
-require_once "/opt/lampp/htdocs/website/config/config.php";
-require_once "/opt/lampp/htdocs/website/app/model/profile.php";
+require_once APP_ROOT . "/config/config.php";
+require_once APP_ROOT . "/app/model/profile.php";
 
 class Friends
 {

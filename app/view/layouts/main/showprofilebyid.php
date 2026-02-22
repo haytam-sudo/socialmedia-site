@@ -1,44 +1,9 @@
 <?php
-require_once "/opt/lampp/htdocs/website/app/controller/getPostsbyUser.php";
-require_once "/opt/lampp/htdocs/website/app/model/Friends.php";
 $msg = $msg ?? "";
 
-// Get profile posts
-$posts = getPostsByUser($profile_id);
-
-$defaultAvatar = "/website/public/images/default_avatar.png";
+$defaultAvatar = BASE_PATH . "/images/default_avatar.png";
 $avatar = $profile->getAvatarUrl() ?: $defaultAvatar;
 $username = $profile->getUsername();
-
-// Initialize Friends for relationship checks
-$friends = new Friends($_SESSION['user_id']);
-
-// Handle form submission first
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (!empty($_POST["sendRequest"])) {
-        $friends->sendRequest((int)$_POST["sendRequest"]);
-    } elseif (!empty($_POST["removeFriend"])) {
-        $friends->removeFriend((int)$_POST["removeFriend"]);
-    } elseif (!empty($_POST["blockFriend"])) {
-        $friends->blockUser((int)$_POST["blockFriend"]);
-    }
-}
-
-// Load friend data after processing the form
-$my_friends = $friends->getFriends();
-$blocked = $friends->getBlocked();
-$outgoing = $friends->getOutgoingInvites();
-
-// Convert to IDs for easier comparison
-$my_friend_ids = array_map(function ($p) {
-    return $p->getId();
-}, $my_friends);
-$blocked_ids = array_map(function ($p) {
-    return $p->getId();
-}, $blocked);
-$outgoing_ids = array_map(function ($p) {
-    return $p->getId();
-}, $outgoing);
 ?>
 
 

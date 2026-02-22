@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/website/public/css/main.css">
-    <link rel="stylesheet" href="/website/public/css/forms.css">
-    <link rel="stylesheet" href="/website/public/css/signup.css">
+    <link rel="stylesheet" href="<?= htmlspecialchars(BASE_PATH) ?>/css/main.css">
+    <link rel="stylesheet" href="<?= htmlspecialchars(BASE_PATH) ?>/css/forms.css">
+    <link rel="stylesheet" href="<?= htmlspecialchars(BASE_PATH) ?>/css/signup.css">
     <title>Sign Up</title>
 </head>
 
 <body>
-    <?php require_once "/opt/lampp/htdocs/website/app/controller/signupController.php"; ?>
     <div id="signupPage">
         <?php if (!empty($msg)): ?>
             <div class="alert-msg"><?= htmlspecialchars($msg) ?></div>

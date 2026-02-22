@@ -1,18 +1,12 @@
-<?php
-
-require_once "/opt/lampp/htdocs/website/app/controller/editprofileController.php";
-require_once "/opt/lampp/htdocs/website/app/model/profile.php";
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/website/public/css/main.css">
-    <link rel="stylesheet" href="/website/public/css/forms.css">
-    <link rel="stylesheet" href="/website/public/css/editprofile.css">
+    <link rel="stylesheet" href="<?= htmlspecialchars(BASE_PATH) ?>/css/main.css">
+    <link rel="stylesheet" href="<?= htmlspecialchars(BASE_PATH) ?>/css/forms.css">
+    <link rel="stylesheet" href="<?= htmlspecialchars(BASE_PATH) ?>/css/editprofile.css">
     <title>Edit profile</title>
 </head>
 

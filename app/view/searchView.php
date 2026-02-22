@@ -1,49 +1,3 @@
-<?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
-require_once "/opt/lampp/htdocs/website/app/model/Search.php";
-require_once "/opt/lampp/htdocs/website/app/model/Friends.php";
-
-if (!isset($_SESSION['user_id'])) {
-    header('Location: ' . url('/login'));
-    exit;
-}
-
-$search_query = isset($_GET["search"]) ? trim($_GET["search"]) : "";
-$search_results = [];
-
-if ($search_query !== "") {
-    $search = new Search($search_query);
-    $search_results = $search->getProfiles();
-}
-
-$friends = new Friends($_SESSION['user_id']);
-
-// Handle form submission first
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (!empty($_POST["sendRequest"])) {
-        $friends->sendRequest((int)$_POST["sendRequest"]);
-    }
-}
-
-// Load friend data after processing the form
-$my_friends = $friends->getFriends();
-$blocked = $friends->getBlocked();
-$outgoing = $friends->getOutgoingInvites();
-
-// Convert profile objects to IDs for easier comparison
-$my_friend_ids = array_map(function ($p) {
-    return $p->getId();
-}, $my_friends);
-$blocked_ids = array_map(function ($p) {
-    return $p->getId();
-}, $blocked);
-$outgoing_ids = array_map(function ($p) {
-    return $p->getId();
-}, $outgoing);
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,13 +5,13 @@ $outgoing_ids = array_map(function ($p) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search Results</title>
-    <link rel="stylesheet" href="/website/public/css/main.css">
-    <link rel="stylesheet" href="/website/public/css/components.css">
-    <link rel="stylesheet" href="/website/public/css/search.css">
+    <link rel="stylesheet" href="<?= htmlspecialchars(BASE_PATH) ?>/css/main.css">
+    <link rel="stylesheet" href="<?= htmlspecialchars(BASE_PATH) ?>/css/components.css">
+    <link rel="stylesheet" href="<?= htmlspecialchars(BASE_PATH) ?>/css/search.css">
 </head>
 
 <body>
-    <?php require_once "/opt/lampp/htdocs/website/app/view/layouts/header/header.php"; ?>
+    <?php require_once APP_ROOT . "/app/view/layouts/header/header.php"; ?>
 
     <div class="main-container">
         <div class="search-results">

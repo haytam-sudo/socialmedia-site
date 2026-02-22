@@ -1,5 +1,5 @@
 <?php
-include_once "/opt/lampp/htdocs/website/config/config.php";
+include_once APP_ROOT . "/config/config.php";
 
 class Profile
 {

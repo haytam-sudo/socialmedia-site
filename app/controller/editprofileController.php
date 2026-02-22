@@ -2,8 +2,8 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-require_once "/opt/lampp/htdocs/website/config/config.php";
-require_once "/opt/lampp/htdocs/website/app/model/profile.php";
+require_once APP_ROOT . "/config/config.php";
+require_once APP_ROOT . "/app/model/profile.php";
 
 // Validate id from URL (router sets $_GET['id'] after matching route)
 $profile_id = isset($_GET['id']) ? (int)$_GET['id'] : null;
@@ -108,7 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && (($_POST["action"] ?? "") === "upda
                 if (!isset($allowed[$mime])) {
                     $msg = "Only JPG, PNG, or WEBP images are allowed.";
                 } else {
-                    $uploadDirFs = "/opt/lampp/htdocs/website/public/uploads/";
+                    $uploadDirFs = APP_ROOT . "/public/uploads/";
                     if (!is_dir($uploadDirFs)) {
                         mkdir($uploadDirFs, 0775, true);
                     }
@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && (($_POST["action"] ?? "") === "upda
                     if (!move_uploaded_file($file["tmp_name"], $destFs)) {
                         $msg = "Failed to save uploaded image.";
                     } else {
-                        $avatarUrl = "/website/public/uploads/" . $filename;
+                        $avatarUrl = BASE_PATH . "/uploads/" . $filename;
                     }
                 }
             }
@@ -135,5 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && (($_POST["action"] ?? "") === "upda
     $profile = Profile::getById($profile_id);
 }
 
-$defaultAvatar = "/website/public/images/default_avatar.png";
+$defaultAvatar = BASE_PATH . "/images/default_avatar.png";
 $avatarForView = $profile->getAvatarUrl() ?: $defaultAvatar;
+
+require_once APP_ROOT . "/app/view/editprofilView.php";
