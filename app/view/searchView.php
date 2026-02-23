@@ -23,7 +23,7 @@
                 <div class="profiles-grid">
                     <?php foreach ($search_results as $profile): ?>
                         <div class="profile-card">
-                            <a href="<?php echo url('/profile/' . (int)$profile['id']); ?>" class="profile-link">
+                            <a href="<?php echo '/profile/' . (int)$profile['id']; ?>" class="profile-link">
                                 <div class="profile-header">
                                     <?php if (!empty($profile['avatar_url'])): ?>
                                         <img src="<?php echo htmlspecialchars(public_url($profile['avatar_url'])); ?>" alt="<?php echo htmlspecialchars($profile['username']); ?>" class="profile-pic">

@@ -14,7 +14,7 @@ if (!$profile_id) {
 
 // Must be logged in
 if (!isset($_SESSION["user_id"])) {
-    header('Location: ' . url('/login'));
+    header('Location: /login');
     exit;
 }
 

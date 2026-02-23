@@ -23,7 +23,7 @@
                 <div class="profiles-grid">
                     <?php foreach ($incoming_invites as $profile): ?>
                         <div class="profile-card">
-                            <a href="<?php echo url('/profile/' . (int)$profile->getId()); ?>" class="profile-link">
+                            <a href="<?php echo '/profile/' . (int)$profile->getId(); ?>" class="profile-link">
                                 <div class="profile-header">
                                     <?php if (!empty($profile->getAvatarUrl())): ?>
                                         <img src="<?php echo htmlspecialchars(public_url($profile->getAvatarUrl())); ?>" alt="<?php echo htmlspecialchars($profile->getUsername()); ?>" class="profile-pic">

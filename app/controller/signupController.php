@@ -4,7 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 // Only redirect if this is a GET request (viewing signup page), not when processing POST
 if ($_SERVER["REQUEST_METHOD"] === "GET" && !empty($_SESSION["user_id"])) {
-    header('Location: ' . url('/profile/' . (int)$_SESSION["user_id"]));
+    header('Location: /profile/' . (int)$_SESSION["user_id"]);
     exit;
 }
 require_once APP_ROOT . "/config/config.php";
@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $newId = $p->addprofile();
         if ($newId) {
             $_SESSION["user_id"] = $newId;
-            header('Location: ' . url('/profile/' . (int)$newId));
+            header('Location: /profile/' . (int)$newId);
             exit;
         } else {
             $msg = "Signup failed. Check server logs for details.";

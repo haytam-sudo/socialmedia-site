@@ -8,7 +8,7 @@ require_once APP_ROOT . "/app/model/Search.php";
 require_once APP_ROOT . "/app/model/Friends.php";
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: ' . url('/login'));
+    header('Location: /login');
     exit;
 }
 

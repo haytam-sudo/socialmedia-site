@@ -81,17 +81,17 @@ $username = $profile->getUsername();
                 <h2>Menu</h2>
                 <nav>
                     <ul>
-                        <li><a href="<?= url('/') ?>">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <?php if (!empty($_SESSION["user_id"])): ?>
-                            <li><a href="<?= url('/profile/' . (int)$_SESSION["user_id"]) ?>">Profile</a></li>
-                            <li><a href="<?= url('/explore') ?>">Explore</a></li>
-                            <li><a href="<?= url('/notifications') ?>">Notifications</a></li>
-                            <li><a href="<?= url('/messages') ?>">Messages</a></li>
-                            <li><a href="<?= url('/settings') ?>">Settings</a></li>
-                            <li><a href="<?= url('/logout') ?>">Log out</a></li>
+                            <li><a href="<?= '/profile/' . (int)$_SESSION["user_id"] ?>">Profile</a></li>
+                            <li><a href="/explore">Explore</a></li>
+                            <li><a href="/notifications">Notifications</a></li>
+                            <li><a href="/messages">Messages</a></li>
+                            <li><a href="/settings">Settings</a></li>
+                            <li><a href="/logout">Log out</a></li>
                         <?php else: ?>
-                            <li><a href="<?= url('/login') ?>">Log in</a></li>
-                            <li><a href="<?= url('/signup') ?>">Sign up</a></li>
+                            <li><a href="/login">Log in</a></li>
+                            <li><a href="/signup">Sign up</a></li>
                         <?php endif; ?>
                     </ul>
                 </nav>

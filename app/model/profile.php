@@ -116,11 +116,7 @@ class Profile
                 $stmt->execute([$username, $bio, $email, $avatarUrl, (int)$profile_id]);
             }
 
-            if (function_exists('url')) {
-                header('Location: ' . url('/profile/' . (int)$profile_id));
-            } else {
-                header("Location: /website/app/view/profileView.php?id=" . (int)$profile_id);
-            }
+            header('Location: /profile/' . (int)$profile_id);
             exit;
         } catch (PDOException $e) {
             error_log("EDIT PROFILE UPDATE ERROR: " . $e->getMessage());

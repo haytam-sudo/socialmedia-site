@@ -10,7 +10,7 @@ require_once APP_ROOT . "/app/controller/getPostsbyUser.php";
 require_once APP_ROOT . "/app/controller/PostController.php";
 
 if (empty($_SESSION['user_id'])) {
-    header('Location: ' . url('/login'));
+    header('Location: /login');
     exit;
 }
 
@@ -18,10 +18,10 @@ $profile_id = isset($_GET['id']) ? (int)$_GET['id'] : null;
 
 if ($profile_id === null || $profile_id <= 0) {
     if (!empty($_SESSION['user_id'])) {
-        header('Location: ' . url('/profile/' . (int)$_SESSION['user_id']));
+        header('Location: /profile/' . (int)$_SESSION['user_id']);
         exit;
     }
-    header('Location: ' . url('/login'));
+    header('Location: /login');
     exit;
 }
 
@@ -46,15 +46,15 @@ if ($isOwnProfile) {
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (!empty($_POST["sendRequest"])) {
             $viewerFriends->sendRequest((int)$_POST["sendRequest"]);
-            header('Location: ' . url('/profile/' . $profile_id));
+            header('Location: /profile/' . $profile_id);
             exit;
         } elseif (!empty($_POST["removeFriend"])) {
             $viewerFriends->removeFriend((int)$_POST["removeFriend"]);
-            header('Location: ' . url('/profile/' . $profile_id));
+            header('Location: /profile/' . $profile_id);
             exit;
         } elseif (!empty($_POST["blockFriend"])) {
             $viewerFriends->blockUser((int)$_POST["blockFriend"]);
-            header('Location: ' . url('/profile/' . $profile_id));
+            header('Location: /profile/' . $profile_id);
             exit;
         }
     }

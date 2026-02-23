@@ -30,7 +30,7 @@
             <button type="submit">Login</button>
 
             <div class="form-footer">
-                <p>Don't have an account? <a href="<?= url('/signup') ?>">Sign up</a></p>
+                <p>Don't have an account? <a href="/signup">Sign up</a></p>
             </div>
         </form>
     </div>

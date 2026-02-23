@@ -1,12 +1,5 @@
 <?php
 
-function url(string $path): string
-{
-    $path = '/' . ltrim($path, '/');
-    return $path;
-}
-
-
 function public_url(string $path): string
 {
     $path = trim($path);
@@ -80,10 +73,10 @@ function get_routes(): array
     return [
         'GET /' => function () use ($root) {
             if (!empty($_SESSION['user_id'])) {
-                header('Location: ' . url('/profile/' . (int)$_SESSION['user_id']));
+                header('Location: /profile/' . (int)$_SESSION['user_id']);
                 exit;
             }
-            header('Location: ' . url('/login'));
+            header('Location: /login');
             exit;
         },
         'GET /login' => $root . '/app/controller/loginController.php',
@@ -159,5 +152,5 @@ function dispatch(): void
 
     // 404
     http_response_code(404);
-    echo '<!DOCTYPE html><html><head><title>404</title></head><body><h1>Not Found</h1><p><a href="' . htmlspecialchars(url('/')) . '">Home</a></p></body></html>';
+    echo '<!DOCTYPE html><html><head><title>404</title></head><body><h1>Not Found</h1><p><a href="/">Home</a></p></body></html>';
 }

@@ -1,6 +1,6 @@
 <header id="header">
   <div class="header-container">
-    <a class="logo" href="<?= url('/') ?>">
+    <a class="logo" href="/">
       <img src="/images/Gemini_Generated_Image_lj65cvlj65cvlj65.png" alt="Logo">
     </a>
 
@@ -11,7 +11,7 @@
         <line x1="21" y1="21" x2="16.65" y2="16.65" />
       </svg>
     </span>
-    <form action="<?= url('/search') ?>" method="get" class="search-form">
+    <form action="/search" method="get" class="search-form">
       <label for="searchbar" class="sr-only">Search</label>
 
 

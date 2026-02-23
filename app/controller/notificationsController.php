@@ -8,7 +8,7 @@ require_once APP_ROOT . "/app/model/Friends.php";
 require_once APP_ROOT . "/app/model/profile.php";
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: ' . url('/login'));
+    header('Location: /login');
     exit;
 }
 
@@ -18,12 +18,12 @@ $incoming_invites = $friends->getIncomingInvites();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST["acceptRequest"])) {
         $friends->addFriend((int)$_POST["acceptRequest"]);
-        header('Location: ' . url('/notifications'));
+        header('Location: /notifications');
         exit;
     }
     if (!empty($_POST["rejectRequest"])) {
         $friends->rejectRequest((int)$_POST["rejectRequest"]);
-        header('Location: ' . url('/notifications'));
+        header('Location: /notifications');
         exit;
     }
 }

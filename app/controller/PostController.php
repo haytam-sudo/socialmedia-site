@@ -10,7 +10,7 @@ $msg = "";
 
 // Only require login when actually posting; GET (viewing profile) may have session from cookie
 if ($_SERVER["REQUEST_METHOD"] === "POST" && empty($_SESSION["user_id"])) {
-    header('Location: ' . url('/login'));
+    header('Location: /login');
     exit;
 }
 
@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST["action"] ?? "") === "add_p
                             $imgUrl
                         ]);
 
-                        header('Location: ' . url('/profile/' . $userId));
+                        header('Location: /profile/' . $userId);
                         exit;
                     }
                 } catch (PDOException $e) {
@@ -150,7 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST["action"] ?? "") === "edit_
                         $editPost->editPost($postId, $title, $content, $imgUrl);
 
                         $userId = (int)($_SESSION["user_id"] ?? 0);
-                        header('Location: ' . url('/profile/' . $userId));
+                        header('Location: /profile/' . $userId);
                         exit;
                     } catch (PDOException $e) {
                         error_log("EDIT POST ERROR: " . $e->getMessage());
@@ -196,7 +196,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST["action"] ?? "") === "delet
                         }
 
                         $userId = (int)($_SESSION["user_id"] ?? 0);
-                        header('Location: ' . url('/profile/' . $userId));
+                        header('Location: /profile/' . $userId);
                         exit;
                     } else {
                         $msg = "Failed to delete post.";

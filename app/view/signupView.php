@@ -39,7 +39,7 @@
 
         <p>
             Already have an account?
-            <a href="<?= url('/login') ?>">Login</a>
+            <a href="/login">Login</a>
         </p>
     </div>
 </body>

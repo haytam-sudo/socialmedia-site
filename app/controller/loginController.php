@@ -4,7 +4,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 // Only redirect if this is a GET request (viewing login page), not when processing POST
 if ($_SERVER["REQUEST_METHOD"] === "GET" && !empty($_SESSION["user_id"])) {
-    header('Location: ' . url('/profile/' . (int)$_SESSION["user_id"]));
+    header('Location: /profile/' . (int)$_SESSION["user_id"]);
     exit;
 }
 
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         // login success
                         $_SESSION["user_id"] = $user["id"];
 
-                        header('Location: ' . url('/profile/' . (int)$_SESSION["user_id"]));
+                        header('Location: /profile/' . (int)$_SESSION["user_id"]);
                         exit;
                     } else {
                         $msg = "Wrong password.";
