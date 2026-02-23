@@ -1,30 +1,12 @@
 <?php
 
-/**
- * Simple router: parse path, match routes, set params, include handler.
- * Requires BASE_PATH and config to be loaded.
- */
-
-if (!defined('BASE_PATH')) {
-    define('BASE_PATH', '');
-}
-
-/**
- * Generate full URL for a path (e.g. url('/login') => '/login').
- */
 function url(string $path): string
 {
     $path = '/' . ltrim($path, '/');
-    return BASE_PATH . $path;
+    return $path;
 }
 
-/**
- * Normalize a public asset path (uploads/images/css/js) to an absolute URL.
- * Handles values stored as:
- * - '/uploads/x.png'
- * - 'uploads/x.png'
- * - '/website/public/uploads/x.png' (legacy)
- */
+
 function public_url(string $path): string
 {
     $path = trim($path);
@@ -36,14 +18,10 @@ function public_url(string $path): string
     if (preg_match('#^(https?:)?//#i', $path)) {
         return $path;
     }
-
-    // Remove legacy '/website/public' prefix if present
-    $path = preg_replace('#^/website/public#', '', $path);
-
     // Ensure leading slash
     $path = '/' . ltrim($path, '/');
 
-    return BASE_PATH . $path;
+    return $path;
 }
 
 /**
@@ -55,16 +33,11 @@ function request_path(): string
     if ($url === '' || $url === '/') {
         $uri = $_SERVER['REQUEST_URI'] ?? '/';
         $parsed = parse_url($uri, PHP_URL_PATH);
-        if ($parsed === false || $parsed === null) {
+        if ($parsed === null) {
             return '/';
         }
-        $base = rtrim(BASE_PATH, '/');
-        if ($base !== '' && strpos($parsed, $base) === 0) {
-            $parsed = substr($parsed, strlen($base)) ?: '/';
-        }
         $path = '/' . trim($parsed, '/');
-        // Treat /index.php or empty as home
-        if ($path === '' || $path === '/' || $path === '/index.php') {
+        if ($path === '/' || $path === '/index.php') {
             return '/';
         }
         return $path;

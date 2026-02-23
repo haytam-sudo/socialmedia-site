@@ -17,12 +17,14 @@ $title = $titles[$page] ?? 'Page';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($title) ?></title>
-    <link rel="stylesheet" href="<?= htmlspecialchars(BASE_PATH) ?>/css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
 </head>
+
 <body>
     <div style="max-width: 600px; margin: 3rem auto; padding: 2rem; text-align: center;">
         <h1><?= htmlspecialchars($title) ?></h1>
@@ -30,4 +32,5 @@ $title = $titles[$page] ?? 'Page';
         <p><a href="<?= url('/profile/' . (int)$_SESSION['user_id']) ?>">Back to profile</a></p>
     </div>
 </body>
+
 </html>

@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && (($_POST["action"] ?? "") === "upda
                     if (!move_uploaded_file($file["tmp_name"], $destFs)) {
                         $msg = "Failed to save uploaded image.";
                     } else {
-                        $avatarUrl = BASE_PATH . "/uploads/" . $filename;
+                        $avatarUrl = "/uploads/" . $filename;
                     }
                 }
             }
@@ -135,7 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && (($_POST["action"] ?? "") === "upda
     $profile = Profile::getById($profile_id);
 }
 
-$defaultAvatar = BASE_PATH . "/images/default_avatar.png";
+$defaultAvatar = "/images/default_avatar.png";
 $avatarForView = $profile->getAvatarUrl() ?: $defaultAvatar;
 
 require_once APP_ROOT . "/app/view/editprofilView.php";

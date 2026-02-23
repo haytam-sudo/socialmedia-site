@@ -1,7 +1,7 @@
 <?php
 $msg = $msg ?? "";
 
-$defaultAvatar = BASE_PATH . "/images/default_avatar.png";
+$defaultAvatar = "/images/default_avatar.png";
 $avatar = public_url($profile->getAvatarUrl() ?: $defaultAvatar);
 $username = $profile->getUsername();
 ?>

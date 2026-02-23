@@ -1,7 +1,7 @@
 <header id="header">
   <div class="header-container">
     <a class="logo" href="<?= url('/') ?>">
-      <img src="<?= htmlspecialchars(BASE_PATH) ?>/images/Gemini_Generated_Image_lj65cvlj65cvlj65.png" alt="Logo">
+      <img src="/images/Gemini_Generated_Image_lj65cvlj65cvlj65.png" alt="Logo">
     </a>
 
     <div class="header-divider"></div>

@@ -5,9 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search Results</title>
-    <link rel="stylesheet" href="<?= htmlspecialchars(BASE_PATH) ?>/css/main.css">
-    <link rel="stylesheet" href="<?= htmlspecialchars(BASE_PATH) ?>/css/components.css">
-    <link rel="stylesheet" href="<?= htmlspecialchars(BASE_PATH) ?>/css/search.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/search.css">
 </head>
 
 <body>

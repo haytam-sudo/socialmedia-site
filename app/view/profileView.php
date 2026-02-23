@@ -5,9 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile</title>
-    <link rel="stylesheet" href="<?= htmlspecialchars(BASE_PATH) ?>/css/main.css">
-    <link rel="stylesheet" href="<?= htmlspecialchars(BASE_PATH) ?>/css/components.css">
-    <link rel="stylesheet" href="<?= htmlspecialchars(BASE_PATH) ?>/css/profile.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/components.css">
+    <link rel="stylesheet" href="/css/profile.css">
 </head>
 
 <body>
@@ -21,9 +21,9 @@
     }
     ?>
 
-    <script src="<?= htmlspecialchars(BASE_PATH) ?>/js/sidebar.js"></script>
-    <script src="<?= htmlspecialchars(BASE_PATH) ?>/js/addpost.js"></script>
-    <script src="<?= htmlspecialchars(BASE_PATH) ?>/js/postactions.js"></script>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/addpost.js"></script>
+    <script src="/js/postactions.js"></script>
 </body>
 
 </html>

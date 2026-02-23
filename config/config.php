@@ -15,9 +15,3 @@ try {
     error_log($e->getMessage());
     die("Database connection failed: " . $e->getMessage());  // Show full message for debugging
 }
-
-/** Base path for the app (used by router and url helper). */
-if (!defined('BASE_PATH')) {
-    define('BASE_PATH', '');
-}
-

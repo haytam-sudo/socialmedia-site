@@ -68,7 +68,7 @@ function processImageUpload()
         return $result;
     }
 
-    $result['imgUrl'] = BASE_PATH . "/uploads/" . $filename;
+    $result['imgUrl'] = "/uploads/" . $filename;
     return $result;
 }
 
