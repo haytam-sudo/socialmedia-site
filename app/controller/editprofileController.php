@@ -136,6 +136,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && (($_POST["action"] ?? "") === "upda
 }
 
 $defaultAvatar = "/images/default_avatar.png";
-$avatarForView = $profile->getAvatarUrl() ?: $defaultAvatar;
+$avatarForView = public_url($profile->getAvatarUrl()) ?: $defaultAvatar;
 
 require_once APP_ROOT . "/app/view/editprofilView.php";
