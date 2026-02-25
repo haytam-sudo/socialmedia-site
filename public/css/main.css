@@ -50,7 +50,7 @@ body {
 
 .logo {
     display: flex;
-    align-items: right;
+    align-items: center;
     flex-shrink: 0;
     text-decoration: none;
     transition: opacity 0.2s ease;
@@ -92,12 +92,25 @@ body {
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.07), 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
+.invisible-button {
+    opacity: 0;
+    /* Hidden, but takes up space and is clickable */
+    /* OR */
+    background-color: transparent;
+    border: none;
+    color: transparent;
+    cursor: pointer;
+}
+
 .search-icon {
     display: flex;
     align-items: center;
     padding: 0 12px 0 16px;
     color: rgba(255, 255, 255, 0.5);
-    pointer-events: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    pointer-events: auto;
     flex-shrink: 0;
 }
 
