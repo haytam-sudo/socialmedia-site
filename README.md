@@ -29,7 +29,7 @@
 - **Commenter** n'importe quelle publication pour démarrer ou rejoindre une conversation
 - **Voir tous les commentaires** affichés sous chaque publication
 
-### 👥 Amis
+### Amis
 
 - **Envoyer des demandes d'amis** à d'autres utilisateurs
 - **Accepter ou refuser** les demandes reçues
