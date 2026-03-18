@@ -8,6 +8,8 @@
 
 **SocialConnect** est une application web de réseau social qui permet aux utilisateurs de créer des comptes, partager des publications, interagir via des commentaires et construire un réseau d'amis — le tout en un seul endroit.
 
+![Page d'accueil](assets/screenshot-home.png)
+
 ---
 
 ## Fonctionnalités
